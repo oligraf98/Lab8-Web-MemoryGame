@@ -1,0 +1,37 @@
+import React from 'react';
+import Carta from './Carta.js';
+
+function ListaCartas ({cartas}){
+  shuffle(cartas);
+  return(
+    <div className = "grid-cartas">
+      {cartas.map(carta => {
+        return <Carta carta = {carta} key={carta.id} />
+      })}
+    </div>
+  );
+
+}
+
+
+
+export default ListaCartas;
+
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+ }

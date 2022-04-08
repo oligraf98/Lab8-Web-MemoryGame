@@ -1,0 +1,73 @@
+/*!*******************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/startApp.css ***!
+  \*******************************************************************************/
+.font-white-xl{
+  color: white;
+  font-size: large;
+}
+
+/*!***************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/game.css ***!
+  \***************************************************************************/
+.squareBtn{
+  height: 16px;
+}
+
+/*!**********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/stateComponents/todoApp.css ***!
+  \**********************************************************************************************/
+
+/*!*******************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/memoria.css ***!
+  \*******************************************************************/
+body{
+  background-color: grey;
+  background-image: url("https://www.teahub.io/photos/full/308-3084902_download-original-resolution-data-src-ocean-wallpapers-high.jpg");
+
+}
+.grid-cartas {
+
+  display: grid;
+  align-items: center;
+  grid-template-columns: 150px 150px 150px 150px;
+  gap: 1rem;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: .25rem;
+  box-shadow: 0 0 5px 2px rgba(0,0,0, .3);
+  background-color: white;
+  transform-style: preserve-3d;
+  height: 150px;
+  width: 150px;
+  transition: 150ms;
+  cursor: pointer;
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0))
+  translateY(var(--translate-y, 0));
+}
+
+.card:hover{
+  --translate-y: -2px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.6);
+}
+
+.card.flip {
+  --rotate-y: 180deg;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  padding: 1rem;
+  backface-visibility: hidden;
+
+}
+
+.card .back {
+  transform: rotateY(180deg);
+}
+
