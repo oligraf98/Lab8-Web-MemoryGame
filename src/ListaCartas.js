@@ -18,35 +18,39 @@ function ListaCartas ({cartas}){
 export default ListaCartas;
 
 function checkDoubles (cartas){
-  const groups = [];
-  const c = 0;
-  for (i in cartas){
-    if(i.turnt = 1){
+  var groups = [];
+  var c = 0;
+  for (var i in cartas){
+    if(i.turnt === 1){
       groups.push(i.group);
       c += 1;
     }
 
     if(c > 1){
       if( groups[0] === groups[1]){
+        const groups = [];
         return [true, groups[0]];
       }else{
+        const groups = [];
         return [true, 0];
       }
     }
 
   }
+  groups = [];
   return [false, 0];
 }
 
 function setDown (cartas){
   const checkdbls = checkDoubles(cartas);
   if(checkdbls[0]){
-    for (carta in cartas){
+
+    for (var carta in cartas){
       if(carta.group === checkdbls[1]){
         carta.won = 1;
 
       }else{
-        i.turnt = 0;
+        carta.turnt = 0;
       }
     }
   }

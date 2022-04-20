@@ -4,7 +4,7 @@ import './memoria.css'
 
 function Memory(){
   shuffle(CARTAS)
-  const [cartas, setCartas] = useState(CARTAS)
+  const cartas = useState(CARTAS)
   return(
     <ListaCartas cartas = {cartas} />
   );
